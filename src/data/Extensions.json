@@ -201,6 +201,72 @@
     ]
   },
   {
+    "name": "Pax8",
+    "id": "Pax8",
+    "type": "Pax8",
+    "cat": "CSP",
+    "description": "Enable the Pax8 integration to manage your CSP licensing from CIPP.",
+    "helpText": "This integration allows you to manage Pax8 CSP licensing from CIPP. Purchase new Microsoft seat-based licenses while adding or editing users in CIPP.",
+    "mappingRequired": true,
+    "links": [
+      {
+        "name": "Pax8 API Documentation",
+        "url": "https://devx.pax8.com/docs/public-api-details"
+      }
+    ],
+    "SettingOptions": [
+      {
+        "type": "switch",
+        "name": "Pax8.Enabled",
+        "label": "Enable Integration"
+      },
+      {
+        "type": "textField",
+        "name": "Pax8.clientId",
+        "label": "Client ID",
+        "placeholder": "Enter your Pax8 Client ID",
+        "required": true,
+        "condition": {
+          "field": "Pax8.Enabled",
+          "compareType": "is",
+          "compareValue": true,
+          "action": "disable"
+        }
+      },
+      {
+        "type": "password",
+        "name": "Pax8.APIKey",
+        "label": "Client Secret",
+        "placeholder": "Enter your Pax8 Client Secret",
+        "required": true,
+        "condition": {
+          "field": "Pax8.Enabled",
+          "compareType": "is",
+          "compareValue": true,
+          "action": "disable"
+        }
+      },
+      {
+        "type": "autoComplete",
+        "name": "Pax8.AllowedCustomRoles",
+        "label": "Select CIPP roles that are allowed to purchase licenses",
+        "api": {
+          "url": "/api/ListCustomRole",
+          "queryKey": "CustomRoles",
+          "labelField": "RoleName",
+          "valueField": "RoleName"
+        },
+        "multiple": true,
+        "condition": {
+          "field": "Pax8.Enabled",
+          "compareType": "is",
+          "compareValue": true,
+          "action": "disable"
+        }
+      }
+    ]
+  },
+  {
     "name": "Gradient",
     "id": "Gradient",
     "type": "Gradient",

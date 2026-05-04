@@ -129,7 +129,7 @@ const Page = () => {
             <Grid size={{ xs: 12 }}>
               <CippFormComponent
                 type="checkbox"
-                label="I understand that buy pressing submit this license will be purchased according to the terms and conditions for this SKU with Sherweb."
+                label="I understand that by pressing submit this license will be purchased according to the terms and conditions for this SKU with Pax8."
                 name="iagree"
                 formControl={formControl}
                 validators={{
