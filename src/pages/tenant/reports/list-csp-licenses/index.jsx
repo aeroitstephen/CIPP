@@ -6,30 +6,30 @@ import { Button } from "@mui/material";
 import Link from "next/link";
 
 const Page = () => {
-  const pageTitle = "CSP Licences Report";
+  const pageTitle = "CSP License Report";
   const apiUrl = "/api/listCSPLicenses";
 
   const actions = [
     {
-      label: "Increase licence count by 1",
+      label: "Increase license count by 1",
       type: "POST",
       icon: <PlusIcon />,
       url: "/api/ExecCSPLicense",
       data: { Action: "!Add", sku: "sku", add: 1 },
-      confirmText: "Are you sure you want to buy 1 extra licence?",
+      confirmText: "Are you sure you want to buy 1 extra license?",
       multiPost: false,
     },
     {
-      label: "Decrease licence count by 1",
+      label: "Decrease license count by 1",
       type: "POST",
       icon: <MinusIcon />,
       url: "/api/ExecCSPLicense",
       data: { Action: "!Remove", sku: "sku", Remove: 1 },
-      confirmText: "Are you sure you want to decrease the licence count by 1?",
+      confirmText: "Are you sure you want to decrease the license count by 1?",
       multiPost: false,
     },
     {
-      label: "Increase licence count",
+      label: "Increase license count",
       type: "POST",
       icon: <PlusIcon />,
       url: "/api/ExecCSPLicense",
@@ -38,15 +38,15 @@ const Page = () => {
         {
           type: "textField",
           name: "add",
-          label: "The number of licences to add",
+          label: "The number of licenses to add",
           multiple: false,
         },
       ],
-      confirmText: "Enter the amount of licences to buy, and press confirm.",
+      confirmText: "Enter the amount of licenses to buy, and press confirm.",
       multiPost: false,
     },
     {
-      label: "Decrease licence count",
+      label: "Decrease license count",
       type: "POST",
       icon: <MinusIcon />,
       url: "/api/ExecCSPLicense",
@@ -54,12 +54,12 @@ const Page = () => {
         {
           type: "textField",
           name: "remove",
-          label: "Licences",
+          label: "Licenses",
           multiple: false,
         },
       ],
       data: { Action: "!Remove", sku: "sku" },
-      confirmText: "Enter the number of licences to remove. This must be a number greater than 0.",
+      confirmText: "Enter the number of licenses to remove. This must be a number greater than 0.",
       multiPost: false,
     },
     {
